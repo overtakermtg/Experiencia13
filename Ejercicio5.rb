@@ -7,22 +7,19 @@
 
 nuevo_hash = meses.zip(ventas)
 
-print nuevo_hash
+print nuevo_hash 
+print "\n"
 #En base al hash generado:
+inv = nuevo_hash.reverse!
+print inv
 #1. Invertir las llaves y los valores del hash.
-
-
-#2. Obtener el mes mayor cantidad de ventas(a partir del hash invertido.)
-
-
-def method_name(a, b)
-	z = a + b
-	y = a * b
-
-	return z, y
+print "\n"
+aux = {}
+for k, v in inv
+	aux[v] = k 
 end
+print aux.to_a
+#2. Obtener el mes mayor cantidad de ventas(a partir del hash invertido.)
+print "\n"
 
-asd, qwe =  method_name(1, 3)
-
-print asd
-print qwe
+print inv.sort!.first
