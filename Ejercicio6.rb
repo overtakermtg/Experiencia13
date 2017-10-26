@@ -68,11 +68,24 @@ print "\n"
 
 
 def agregaIVA(hash_init)
-	aux = []
-	hash_init.map do |v|
-		aux += (v * 1.19)
+	hash_init.update(hash_init) {|k, v| v * 1.19 }
+end
+print agregaIVA(restaurant_menu)
+print "\n"
+
+
+def descuentos(hash_init)
+	hash_init.update(hash_init) {|k, v| 
+	val = k.scan(/\w+/).size()
+	if val > 1
+		v * 0.8
 	end
-	return aux
+	}
 end
 
-print agregaIVA(restaurant_menu)
+print descuentos(restaurant_menu)
+print "\n"
+
+
+
+
